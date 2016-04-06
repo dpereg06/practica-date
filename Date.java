@@ -11,6 +11,15 @@ public class Date{
 		anio = 0;
 	}
 
+	public Date(int dia,int mes,int anio) throws Exception {
+		StringBuffer message = new StringBuffer();
+
+		if (comprobacionDia() == false)
+			message.append("El día introducido es erróneo\n ");
+		if (comprobacionMes() == false)
+			message.append("El mes introducido es erróneo\n");
+	}
+
 	public void setDia(int dia){
 			
 		this.dia = dia;
@@ -151,6 +160,49 @@ public class Date{
 
 		for(i=mes;i <= 12;i++){
 			salida.append(nombreMes() + "\n");
+		}
+
+		return salida.toString();
+	}
+
+	public String diasRestantes(){
+
+		int i;
+		StringBuffer salida = new StringBuffer();
+
+		for(i=dia;i <= 31;i++){
+			salida.append(dia + " ");
+		}
+
+		return salida.toString();
+	}
+
+	public String mismosDiasMes(){
+
+		StringBuffer salida = new StringBuffer();
+
+		switch (mes){
+
+			case 1:
+			case 3:
+			case 5:
+			case 7:
+			case 8:
+			case 10:
+			case 12:
+			salida.append("Enero Marzo Mayo Julio Agosto Octubre Diciembre");
+			break;
+
+			case 2:
+			salida.append("Febrero");
+			break;
+
+			case 4:
+			case 6:
+			case 9:
+			case 11:
+			salida.append("Abril Junio Septiembre Noviembre");
+			break;
 		}
 
 		return salida.toString();
