@@ -258,16 +258,6 @@ public class Date{
 		return cMes;
 	}
 
-	/*public String toString(){
-		StringBuffer salida = new StringBuffer();
-		if (comprobacionDia() == false)
-			salida.append("Día introducido no válido ");
-		if (comprobacionMes == false)
-			salida.append("Mes introducido no válido ");
-		
-		return salida.toString(); 
-	}*/
-
 	public String toString(){
 		StringBuffer salida = new StringBuffer();
 
