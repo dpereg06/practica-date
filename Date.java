@@ -11,13 +11,22 @@ public class Date{
 		anio = 0;
 	}
 
-	public Date(int dia,int mes,int anio) throws Exception {
+	public Date(int dia,int mes,int anio) throws DateException {
 		StringBuffer message = new StringBuffer();
 
 		if (comprobacionDia() == false)
 			message.append("El día introducido es erróneo\n ");
 		if (comprobacionMes() == false)
 			message.append("El mes introducido es erróneo\n");
+		if (message.length() != 0)
+				throw new DateException(message.toString());
+
+		else{
+			
+			this.dia=dia;
+			this.mes=mes;
+			this.anio=anio;
+		}
 	}
 
 	public void setDia(int dia){
